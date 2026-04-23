@@ -1,0 +1,1490 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navbar Hamburger Icon */
+.navbar-toggler {
+    border: 2px solid rgba(255,255,255,0.8);
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.3);
+}
+
+.navbar-toggler-icon {
+    width: 25px;
+    height: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Carousel Section */
+.carousel {
+    margin-top: 0;
+}
+
+.carousel-img {
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+/* Restaurants page carousel - shorter height */
+#restaurantCarousel .carousel-img {
+    height: 400px;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-caption-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-slide {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Carousel Slide Backgrounds (fallback) */
+.slide-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.slide-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.slide-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.carousel-caption-custom {
+    text-align: center;
+    color: white;
+    z-index: 10;
+    padding: 20px;
+}
+
+.carousel-caption-custom h1 {
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 4rem;
+    letter-spacing: -1px;
+}
+
+.carousel-caption-custom p {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.carousel-caption-custom .btn {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    letter-spacing: 0.5px;
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Carousel Indicators */
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.carousel-indicators button.active {
+    background-color: rgba(255,255,255,1);
+}
+
+/* Hero Section (kept for backward compatibility) */
+.hero-section {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    padding: 100px 0;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Feature Boxes */
+.feature-box {
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.feature-box:hover::before {
+    left: 100%;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.feature-icon {
+    font-size: 70px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.feature-box h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.feature-stats {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 15px;
+    color: #dc3545;
+    letter-spacing: 1px;
+}
+
+.feature-box:hover .feature-stats {
+    color: #ffc107;
+}
+
+/* Animate boxes on scroll */
+.animate-box {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Category Cards */
+.category-card {
+    display: block;
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.category-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.category-card h5 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.stat-box {
+    position: relative;
+    z-index: 1;
+}
+
+.stat-number {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+}
+
+.stat-label {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Step Boxes */
+.step-box {
+    position: relative;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+}
+
+.step-number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+.step-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.step-box:hover {
+    transform: scale(1.05);
+}
+
+.step-box:hover .step-icon {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.step-box h5 {
+    margin: 15px 0;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.step-box p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Animate title */
+.animate-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.animate-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* Section Headings */
+h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #333;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Paragraph text */
+p.lead {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Menu Cards */
+.menu-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.menu-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.menu-card img {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-card:hover img {
+    transform: scale(1.15);
+}
+
+.menu-card .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.menu-card:hover .card-body {
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+
+.menu-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.menu-card:hover .card-title {
+    color: #dc3545;
+}
+
+.menu-card .card-text {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+}
+
+.menu-card:hover .card-text {
+    color: #555;
+}
+
+.menu-card .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #dc3545;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.menu-card:hover .price {
+    transform: scale(1.1);
+    color: #c82333;
+}
+
+.menu-card .btn {
+    margin-top: auto;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cart Items */
+.cart-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Success Icon */
+.success-icon {
+    width: 100px;
+    height: 100px;
+    background: #28a745;
+    color: white;
+    font-size: 60px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 60px 0;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    height: 100%;
+    position: relative;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.restaurant-card img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.restaurant-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.restaurant-card .card-body {
+    padding: 20px;
+}
+
+.restaurant-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.restaurant-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-stars {
+    font-size: 1rem;
+}
+
+.rating-number {
+    background: #28a745;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.restaurant-specialties {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    /* Carousel responsive */
+    .carousel-img {
+        height: 400px;
+    }
+    
+    #restaurantCarousel .carousel-img {
+        height: 350px;
+    }
+    
+    .carousel-slide {
+        height: 400px;
+    }
+    
+    .carousel-caption-custom h1 {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-caption-custom p {
+        font-size: 1rem;
+    }
+    
+    .carousel-caption-custom .btn {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-img {
+        height: 350px;
+    }
+    
+    #restaurantCarousel .carousel-img {
+        height: 300px;
+    }
+    
+    .carousel-caption-custom h1 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-caption-custom p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Interactive Menu Cards */
+.menu-card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.menu-card:hover img {
+    transform: scale(1.15);
+}
+
+.btn-add-cart {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+}
+
+.btn-add-cart:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+}
+
+.btn-add-cart::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1), height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-add-cart:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.btn-add-cart.added {
+    background: #28a745 !important;
+    border-color: #28a745 !important;
+    transform: scale(0.95);
+    transition: all 0.2s ease;
+}
+
+.cart-icon {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.btn-add-cart:hover .cart-icon {
+    transform: scale(1.3) rotate(15deg);
+}
+
+.restaurant-tag {
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.restaurant-tag .badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.menu-card:hover .restaurant-tag .badge {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.btn-add-cart::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-add-cart:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-add-cart.added {
+    background: #28a745 !important;
+    border-color: #28a745 !important;
+    transform: scale(0.95);
+}
+
+.cart-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn-add-cart:hover .cart-icon {
+    transform: scale(1.2);
+}
+
+.restaurant-tag {
+    margin-bottom: 10px;
+}
+
+.restaurant-tag .badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+}
+
+/* Category Title */
+.category-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.category-title:hover {
+    color: #dc3545;
+    transform: translateX(10px);
+}
+
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #dc3545, #ffc107);
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-title:hover::after {
+    width: 100%;
+}
+
+/* Animate cards */
+.animate-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Veg/Non-Veg Filter Section */
+.filter-section {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.filter-group {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.filter-btn {
+    padding: 12px 30px;
+    font-weight: bold;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.filter-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
+.filter-btn.active:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-3px) scale(1.08);
+}
+
+.filter-info {
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+/* Veg/Non-Veg Indicators */
+.veg-indicator,
+.nonveg-indicator {
+    font-size: 1.2rem;
+    display: inline-block;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover .veg-indicator,
+.menu-card:hover .nonveg-indicator {
+    transform: scale(1.2);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.8;
+    }
+}
+
+.veg-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.menu-card:hover .veg-badge {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.veg-badge .veg-indicator,
+.veg-badge .nonveg-indicator {
+    font-size: 1rem;
+}
+
+/* Menu card title with indicator */
+.menu-card .card-title {
+    flex: 1;
+}
+
+
+/* About Page Styles */
+.about-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 100px 0;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mission-box,
+.vision-box {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.mission-box:hover,
+.vision-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.mission-icon,
+.vision-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.mission-box ul,
+.vision-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mission-box ul li,
+.vision-box ul li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.mission-box ul li::before,
+.vision-box ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.why-box {
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.why-box:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.why-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.value-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.value-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #667eea;
+    opacity: 0.2;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.value-card h4 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 15px;
+}
+
+.team-card {
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f8f9fa;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .team-img {
+    border-color: #667eea;
+    transform: scale(1.1);
+}
+
+.team-card h5 {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Footer Styles */
+footer {
+    margin-top: auto;
+}
+
+footer h5 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer a:hover {
+    color: #fff !important;
+    text-decoration: underline !important;
+}
+
+footer hr {
+    margin: 2rem 0;
+    opacity: 0.3;
+}
+
+
+/* Footer Text Visibility */
+footer .text-muted {
+    color: #adb5bd !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+footer h5 {
+    color: #ffffff !important;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+footer ul li a {
+    color: #adb5bd !important;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+footer ul li a:hover {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
+
+footer .text-white {
+    color: #ffffff !important;
+}
+
+footer strong {
+    color: #ffc107;
+    font-weight: 700;
+}
+
+
+/* About Page Interactive Animations */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-left {
+    animation: slideLeft 1s ease-out;
+}
+
+.animate-slide-right {
+    animation: slideRight 1s ease-out;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hover-zoom {
+    transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
+
+.interactive-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.interactive-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.interactive-card:hover .why-icon {
+    transform: scale(1.3) rotate(360deg);
+    transition: transform 0.6s ease;
+}
+
+.interactive-card:hover p {
+    color: white !important;
+}
+
+.interactive-stat {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.interactive-stat:hover {
+    transform: scale(1.15);
+}
+
+.pulse-btn {
+    animation: pulse-animation 2s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes pulse-animation {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+    }
+}
+
+.pulse-btn:hover {
+    animation: none;
+    transform: scale(1.1);
+}
+
+
+/* Profile Icon in Navbar */
+.profile-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.profile-icon:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Profile Page Styles */
+.profile-card {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.stat-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.stat-card h3 {
+    font-weight: 700;
+}
+
+
+/* Order History Styles */
+.order-item {
+    border-left: 4px solid #dc3545;
+    transition: all 0.3s ease;
+}
+
+.order-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: white !important;
+}
+
+.order-item h6 {
+    color: #333;
+    font-weight: 700;
+}
+
+.order-item .badge {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+}
+
+
+/* Navbar Food Theme Colors */
+.navbar.bg-danger {
+    background: linear-gradient(135deg, #c92a2a 0%, #e03131 100%) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+    width: 80%;
+}
+
+.navbar .nav-link:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Ensure navbar items are properly aligned to the right */
+.navbar-nav.ms-auto {
+    margin-left: auto !important;
+    padding-right: 0.5rem;
+}
+
+.navbar .nav-item {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+}
+
+.navbar-brand {
+    margin-right: auto;
+    padding-left: 1rem;
+}
+
+
+/* Payment Modal Styles */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payment-option {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.payment-option:hover {
+    border-color: #28a745;
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.payment-option.active {
+    border-color: #28a745;
+    background: #e8f5e9;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.payment-option label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    flex: 1;
+}
+
+.payment-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.payment-details {
+    flex: 1;
+}
+
+.payment-details strong {
+    display: block;
+    color: #333;
+    font-size: 1rem;
+}
+
+.payment-details small {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+#deliveryAddress {
+    resize: none;
+}
+
+#deliveryAddress:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
